@@ -65,7 +65,17 @@
         <div class="row">
           <div>
             <h2>Algorithm</h2>
-            <p>Did your navigation system shut down in the middle of that asteroid field? We can repair any dings and scrapes to your spacecraft!</p>
+            <p> I used CMU's Openpose API for body part detection in images,
+              the weights I used came from the pre-trained Caffe model, the file 
+              "pose_iter_1600000.caffemodel" in my repository. This outputs a 4D
+              matrix which includes a confidence map of each body part. Taking the global 
+              maximums of each body part allows me to identify the location of the body parts
+              I want. Afterwards we use the law of cosines to help us determine the angles in 
+              a golfers pose, for example if we are trying to find the angle on the right elbow,
+              we need the distances from a: right shoulder - right elbow, b: right elbow - right wrist and
+              c: right wrist - right shoulder. 
+              <code>c² = a² + b² - 2ab cos(C)</code>
+            </p>
           </div>
         </div>
       </div>
@@ -93,7 +103,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-md-offset-4 text-center">
-            <h2>Our Work</h2>
+            <h2>Resources</h2>
             <hr>
           </div>
         </div>
