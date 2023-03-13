@@ -66,9 +66,14 @@
         <div class="row">
           <div>
             <h2>Algorithm</h2>
-            <p> I used CMU's Openpose API for body part detection in images,
+            <p> I used CMU's openPose API for body part detection in images,
               the weights are from the pre-trained Caffe model, the file 
-              "pose_iter_1600000.caffemodel" in my repository. This outputs a 4D
+              "pose_iter_1600000.caffemodel" in my repository. Many applications of 
+              openPose use mobileNet, I chose to use the Caffe model because it is a 
+              deep learrning framework that supports multiple neural network architectures,  
+              this led to notice better results using the Caffe model. Looking at the size of
+              each pre-trained model for each framework, mobileNet is a few megabytes while, 
+              caffee is a few hundred megabyters. When an image is passed through the model, it outputs a 4D
               matrix which includes a confidence map of each body part. Taking the global 
               maximums of each body part allows me to identify the location of the body parts
               I want. </p> <p>Afterwards we use the law of cosines to help us determine each angle in 
